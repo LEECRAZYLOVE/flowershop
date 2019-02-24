@@ -22,11 +22,12 @@ namespace Tests
             IFlowerDAO F = Substitute.For<IFlowerDAO>();
             Flower F1 = new Flower(F, "Rose", 45.99, 3);
             Flower F2 = new Flower(F, "Orchard", 38.99, 2);
-            Flower F3 = new Flower(F, "Lily", 64.99, 1);
+            Flower F3 = new Flower(F, "R", 64.99, 1);
 
             //Act
             List<Flower> FList = new List<Flower> { F1 };//, F2, F3};
             Order Ord = new Order(O, C);
+            Ord.Deliver();
 
             //Assert
             Assert.IsTrue(Ord.isDelivered = true);
